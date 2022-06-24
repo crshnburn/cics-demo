@@ -1,0 +1,7 @@
+<server>
+    <featureManager>
+        <feature>zosconnect:cics-1.0</feature>
+    </featureManager>
+
+    <zosconnect_cicsIpicConnection id="cicsConn" host="winmvs3s.hursley.ibm.com" port="1110"/>
+</server>

@@ -1,0 +1,5 @@
+<server>
+
+   <logging traceSpecification="zosConnectWv=all:zosConnectMapping=all"/>
+
+</server>
