@@ -2,7 +2,7 @@
 # Copyright IBM Corp. 2021
 ##########################
 
-FROM ibm-zcon-server:latest
+FROM icr.io/cp/zosconnect/ibm-zcon-server:3.0.61
 
 # customise server.xml via dropins
 COPY --chown=1001:0 src/main/liberty/config /config/configDropins/overrides
