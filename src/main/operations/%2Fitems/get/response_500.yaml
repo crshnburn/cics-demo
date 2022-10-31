@@ -1,7 +1,0 @@
----
-mappings:
-- body:
-    mappings:
-    - message:
-        template: "{{$error.message}}"
-version: 1
