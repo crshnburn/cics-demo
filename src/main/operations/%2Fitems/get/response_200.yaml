@@ -1,0 +1,34 @@
+---
+mappings:
+- body:
+    mappings:
+    - totalItems:
+        expression: "$zosAssetResponse.commarea.DFH0XCP1.\"CA-INQUIRE-REQUEST\".\"\
+          CA-ITEM-COUNT\""
+    - items:
+        foreach:
+          input: "$zosAssetResponse.commarea.DFH0XCP1.\"CA-INQUIRE-REQUEST\".\"CA-CAT-ITEM\""
+          mappings:
+          - summary:
+              mappings:
+              - stock:
+                  template: "{{$item.\"IN-STOCK\"}} of {{$item.\"CA-DESCRIPTION\"\
+                    }} in stock"
+              - orders:
+                  template: "{{$item.\"ON-ORDER\"}} of {{$item.\"CA-DESCRIPTION\"\
+                    }} on order."
+          - information:
+              mappings:
+              - itemReference:
+                  expression: "$item.\"CA-ITEM-REF\""
+              - description:
+                  template: "{{$item.\"CA-DESCRIPTION\"}}"
+              - cost:
+                  template: "{{$number(ca-$item.\"CA-COST\" )}}"
+              - department:
+                  expression: "$item.\"CA-DEPARTMENT\""
+              - stock:
+                  expression: "$item.\"IN-STOCK\""
+              - onOrder:
+                  expression: "$item.\"ON-ORDER\""
+version: 1
