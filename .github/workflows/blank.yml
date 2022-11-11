@@ -55,7 +55,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: .
           push: true
           tags: quay.io/crshnburn/catalogmanager:${{ env.BRANCH }}
       
