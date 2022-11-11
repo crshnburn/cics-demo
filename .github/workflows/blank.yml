@@ -30,29 +30,33 @@ jobs:
         with:
           # Gradle command line arguments (supports multi-line input)
           arguments: assemble
-  image:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
+          gradle-version: 6.9
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
+
+      - name: Get branch name
+        run: echo "BRANCH=${GITHUB_REF##*/}" >> $GITHUB_ENV
+
       - name: Login to icr.io
         uses: docker/login-action@v2
         with:
           registry: cp.icr.io
           username: cp
           password: ${{ secrets.ICR_TOKEN }}
+
       - name: Login to quay.io
         uses: docker/login-action@v2
         with:
           registry: quay.io
           username: ${{ secrets.QUAY_USER }}
           password: ${{ secrets.QUAY_PASS }}
-      -
-        name: Build and push
+
+      - name: Build and push
         uses: docker/build-push-action@v3
         with:
+          context: .
           push: true
-          tags: quay.io/crshnburn/catalogmanager:${{ github.head_ref }}
+          tags: quay.io/crshnburn/catalogmanager:${{ env.BRANCH }}
       
       
