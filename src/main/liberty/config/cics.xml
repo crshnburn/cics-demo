@@ -1,7 +1,8 @@
-<server>
+<?xml version="1.0" encoding="UTF-8"?>
+<server description="IPIC connection to CICS">
     <featureManager>
         <feature>zosconnect:cics-1.0</feature>
     </featureManager>
 
-    <zosconnect_cicsIpicConnection id="cicsConn" host="${CICS_HOST}" port="${CICS_PORT}"/>
+    <zosconnect_cicsIpicConnection id="cicsConn" host="${CICS_HOST}" port="${CICS_PORT}" />
 </server>

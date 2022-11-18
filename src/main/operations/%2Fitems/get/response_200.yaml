@@ -12,11 +12,14 @@ mappings:
           - summary:
               mappings:
               - stock:
-                  template: "{{$item.\"IN-STOCK\"}} of {{$item.\"CA-DESCRIPTION\"\
-                    }} in stock"
+                  template: "Department {{$item.\"CA-DEPARTMENT\"}} has {{$item.\"\
+                    IN-STOCK\"}} '{{$item.\"CA-DESCRIPTION\"}}' in stock."
               - orders:
-                  template: "{{$item.\"ON-ORDER\"}} of {{$item.\"CA-DESCRIPTION\"\
-                    }} on order."
+                  template: "{{$item.\"ON-ORDER\"}} '{{$item.\"CA-DESCRIPTION\"}}'\
+                    \ on order at unit price of ${{$length($item.\"CA-COST\") = 0\
+                    \ ? 0 : $number($item.\"CA-COST\")}}. Total order value: ${{$length($item.\"\
+                    CA-COST\") = 0 ? 0 : $number($item.\"CA-COST\") * $number($item.\"\
+                    ON-ORDER\")}}"
           - information:
               mappings:
               - itemReference:
@@ -24,7 +27,8 @@ mappings:
               - description:
                   template: "{{$item.\"CA-DESCRIPTION\"}}"
               - cost:
-                  template: "{{$number(ca-$item.\"CA-COST\" )}}"
+                  template: "{{$length($item.\"CA-COST\") = 0 ? 0 : $number($item.\"\
+                    CA-COST\")}}"
               - department:
                   expression: "$item.\"CA-DEPARTMENT\""
               - stock:
