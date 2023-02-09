@@ -3,7 +3,8 @@ version: 1.0
 type: "cicsCommarea-1.0"
 description: ""
 providerProperties:
-  transidUsage: ""
+  transid: "CPMI"
+  transidUsage: "EIB_AND_MIRROR"
   language: "COBOL"
   program: "DFH0XCMN"
   bidiConfigRef: ""
