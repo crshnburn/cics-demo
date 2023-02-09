@@ -9,4 +9,4 @@ providerProperties:
   program: "DFH0XCMN"
   bidiConfigRef: ""
   connectionRef: "cicsConn"
-  ccsid: "37"
+  ccsid: "819"
