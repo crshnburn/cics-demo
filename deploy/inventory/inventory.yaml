@@ -1,0 +1,8 @@
+H3N_systems:
+  hosts:
+    H3N:
+      ansible_communication: ssh
+      ansible_host: 9.114.209.107
+      ansible_port: 25322
+      ansible_user: ibmuser
+      ansible_python_interpreter: /usr/lpp/IBM/cyp/v3r9/pyz/bin/python3

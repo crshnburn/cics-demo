@@ -1,0 +1,19 @@
+- name: Deploy API
+  hosts: zos_nodes
+  gather_facts: false
+
+  vars:
+    ansible_python_interpreter: /usr/lpp/IBM/cyp/v3r9/pyz/bin/python3
+
+  tasks:
+    - name: Copy WAR file
+      ansible.builtin.copy:
+        src: ../../build/libs/api.war
+        dest: /var/zosconnect/servers/ZCSRV01/apps/
+        mode: '0644'
+
+    - name: Copy config
+      ansible.builtin.copy:
+        src: ../../src/main/liberty/config/cics.xml
+        dest: /var/zosconnect/servers/ZCSRV01/configDropins/overrides
+        mode: '0644'

@@ -25,3 +25,5 @@ gradle-app.setting
 
 # Ignore OpenAPI generator files
 .openapi-generator/*
+
+deploy/artifacts/

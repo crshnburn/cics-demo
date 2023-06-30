@@ -1,0 +1,2 @@
+[zos_nodes]
+tivlp89.pok.stglabs.ibm.com ansible_user=ibmuser ansible_password=tivmvs ansible_ssh_extra_args='-o StrictHostKeyChecking=no' ansible_port=25322
