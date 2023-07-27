@@ -3,8 +3,8 @@ mappings:
 - body:
     mappings:
     - totalItems:
-        template: "demo test $zosAssetResponse.commarea.DFH0XCP1.\"CA-INQUIRE-REQUEST\".\"\
-          CA-ITEM-COUNT\""
+        template: "demo test {{$zosAssetResponse.commarea.DFH0XCP1.\"CA-INQUIRE-REQUEST\".\"\
+          CA-ITEM-COUNT\"}}"
     - items:
         foreach:
           input: "$zosAssetResponse.commarea.DFH0XCP1.\"CA-INQUIRE-REQUEST\".\"CA-CAT-ITEM\""
