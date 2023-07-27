@@ -3,7 +3,7 @@ mappings:
 - body:
     mappings:
     - totalItems:
-        expression: "$zosAssetResponse.commarea.DFH0XCP1.\"CA-INQUIRE-REQUEST\".\"\
+        expression: "demo test $zosAssetResponse.commarea.DFH0XCP1.\"CA-INQUIRE-REQUEST\".\"\
           CA-ITEM-COUNT\""
     - items:
         foreach:
