@@ -3,8 +3,7 @@ mappings:
 - body:
     mappings:
     - totalItems:
-        template: "demo test {{$zosAssetResponse.commarea.DFH0XCP1.\"CA-INQUIRE-REQUEST\".\"\
-          CA-ITEM-COUNT\"}}"
+        expression: "$zosAssetResponse.commarea.DFH0XCP1.\"CA-INQUIRE-REQUEST\".\"CA-ITEM-COUNT\""
     - items:
         foreach:
           input: "$zosAssetResponse.commarea.DFH0XCP1.\"CA-INQUIRE-REQUEST\".\"CA-CAT-ITEM\""
@@ -12,7 +11,7 @@ mappings:
           - summary:
               mappings:
               - stock:
-                  template: "Department {{$item.\"CA-DEPARTMENT\"}} has {{$item.\"\
+                  template: "demo Department {{$item.\"CA-DEPARTMENT\"}} has {{$item.\"\
                     IN-STOCK\"}} '{{$item.\"CA-DESCRIPTION\"}}' in stock."
               - orders:
                   template: "{{$item.\"ON-ORDER\"}} '{{$item.\"CA-DESCRIPTION\"}}'\
