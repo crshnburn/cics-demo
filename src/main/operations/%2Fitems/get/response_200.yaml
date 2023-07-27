@@ -12,7 +12,7 @@ mappings:
           - summary:
               mappings:
               - stock:
-                  template: "Department {{$item.\"CA-DEPARTMENT\"}} has {{$item.\"\
+                  template: "Itau Department {{$item.\"CA-DEPARTMENT\"}} has {{$item.\"\
                     IN-STOCK\"}} '{{$item.\"CA-DESCRIPTION\"}}' in stock."
               - orders:
                   template: "{{$item.\"ON-ORDER\"}} '{{$item.\"CA-DESCRIPTION\"}}'\
