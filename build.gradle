@@ -12,6 +12,6 @@ repositories {
     mavenCentral()
 }
 
-build.doLast {
+assemble.doLast {
     logger.lifecycle('Building at GSE UK')
 }
