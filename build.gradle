@@ -11,3 +11,7 @@ repositories {
     }
     mavenCentral()
 }
+
+assemble.doLast {
+    logger.lifecycle("Building at GSE 2023")
+}
