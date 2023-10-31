@@ -11,3 +11,7 @@ repositories {
     }
     mavenCentral()
 }
+
+build.doLast {
+    logger.lifecycle('Building at GSE UK')
+}
