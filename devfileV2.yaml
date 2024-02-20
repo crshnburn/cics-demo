@@ -11,6 +11,13 @@ projects:
         origin: 'https://github.com/crshnburn/cics-demo.git'
     name: catalog-manager-api
 components:
+    - name: tools
+      container:
+        image: registry.redhat.io/devspaces/udi-rhel8@sha256:7e942155ebd808256e34a9411b85e41ae41d771353146cf6c15ed0b6bd4caacd
+        memoryLimit: 3Gi
+        memoryRequest: 2Gi
+        cpuLimit: '4'
+        cpuRequest: '1'
     - name: zosconnect
       container:
         endpoints:
@@ -22,6 +29,6 @@ components:
         env:
           - name: ZCON_DESIGNER_PROJECT
             value: /projects/catalog-manager-api
-        image: 'icr.io/zosconnect/ibm-zcon-designer:3.0.70'
+        image: 'icr.io/zosconnect/ibm-zcon-designer:3.0.78'
         memoryLimit: 4927M
         mountSources: true
