@@ -1,0 +1,12 @@
+---
+mappings:
+- commarea:
+    mappings:
+    - DFH0XCP1:
+        mappings:
+        - CA-REQUEST-ID:
+            template: "01INQC"
+        - CA-INQUIRE-REQUEST:
+            mappings:
+            - CA-LIST-START-REF:
+                expression: "$queryParameters.startItemID"
